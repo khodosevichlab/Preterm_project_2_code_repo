@@ -117,7 +117,7 @@ names = c("full_P28_1",
 con <- quickConos(cms,
                   names,
                   n.cores.p2=10,
-                  n.cores.con=20, get.tsne = F, alignment.strength = 0.3) # 0 shows very strong batch by sample, 0.2 also
+                  n.cores.con=20, get.tsne = F, alignment.strength = 0.3) 
 
 con <- con$con
 ```

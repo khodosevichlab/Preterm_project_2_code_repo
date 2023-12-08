@@ -133,7 +133,7 @@ leiden22<- con$clusters$leiden$groups %>% factor
 qsave(leiden22, "leiden22.qs")
 qsave(con, "con.qs")
 ```
-For annotation, some of the clusters were collapsed or manually separated.
+For annotation, some of the clusters were collapsed or further separated.
 
 
 

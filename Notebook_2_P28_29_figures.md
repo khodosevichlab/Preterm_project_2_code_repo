@@ -43,7 +43,7 @@ rasterize(plot, layers='Point', dpi=1000)
 ggsave("UMAP_all_cells.pdf", width=14, height=8.6)
 ```
 
-# Suppl. Fig. 3D
+# Fig. S4D
 plot UMAP with gene expression (Astrocytes)
 ```{r}
 genes <- c("Gfap", "Aqp4", "Thbs4", "Cdh5")

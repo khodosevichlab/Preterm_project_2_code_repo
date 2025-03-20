@@ -181,17 +181,39 @@ qsave(cao, "cao_RG_early.qs")
 # Fig. S1D 
 ```{r}
 #defining colours of clusters
-colours <- c("#074770","#3232ff", "#AFB4DB", "#659AD2", "#FF9C00","#0067C0", "#32ff32", "#ffff32", "#ffaf32") %>% setNames(c( "Lateral-ventral_RG" ,     "Dorsal_RG" ,              "Dorsal-lateral_RG" ,      "Primed_active_RG"  ,      "Immature_E_cell"   ,      "Primed_active_RG_dorsal", "NPC" ,                    "Mki67_RG"   ,             "Pre_E" ))
+colours <- c("#074770","#3232ff", "#AFB4DB", "#659AD2", "#cc3216","#0067C0", "#32ff32", "#ffff32", "#ffaf32") %>% setNames(c( "Lateral-ventral_RG", "Dorsal_RG", "Dorsal-lateral_RG", "Primed_active_RG", "Immature_E_cell", "Primed_active_RG_dorsal", "NPC", "Mki67_RG", "Pre_E"))
 
 plot <- con$plotGraph(groups=anno, label="") + scale_colour_manual(values=colours)+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) 
 plot
 rasterize(plot, layers='Point', dpi=1000)
-ggsave("UMAP_RG.pdf", width=7, height=4.3)
+ggsave("UMAP_RG_new.pdf", width=7, height=4.3)
 ```
 
 # Fig. S1E
+create condition factor
+```{r}
+sample <- con$getDatasetPerCell()
+
+conditions <- gsub("E18_5_1_", "fullterm", sample)
+conditions <- gsub("E18_5_2_", "fullterm", conditions)
+conditions <- gsub("pre_P0_1_", "preterm", conditions)
+conditions <- gsub("pre_P0_2_", "preterm", conditions)
+
+conditions %<>% as.factor()
+names(conditions) <- names(sample)
+```
+```{r}
+plotClusterBarplots(con, show.entropy = F, show.size = F  , sample.factor = conditions,groups = anno) + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + scale_fill_discrete(name = "condition")+
+ theme(plot.margin = margin(0.5,0,0,2, "cm")) +xlab(" ")
+ggsave("Barplot_condition_RG.pdf", width=14, height = 8, units = "cm")
+```
 
 # Fig. S1F
+```{r}
+plotClusterBarplots(con, show.entropy = F, show.size = F,groups = anno) + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + scale_fill_discrete(name = "samples")+ 
+ theme(plot.margin = margin(0.5,0,0,2, "cm")) +xlab(" ")
+ggsave("Barplot_samples_RG.pdf", width=14, height = 8, units = "cm")
+```
 
 # Fig. S1G
 ```{r}

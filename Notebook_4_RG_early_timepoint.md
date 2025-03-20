@@ -178,7 +178,7 @@ write.xlsx(x = early_RG_GSEA, file= "early_RG_GSEA.xlsx")
 qsave(cao, "cao_RG_early.qs")
 ```
 
-# Fig. 
+# Fig. S1D 
 ```{r}
 #defining colours of clusters
 colours <- c("#074770","#3232ff", "#AFB4DB", "#659AD2", "#FF9C00","#0067C0", "#32ff32", "#ffff32", "#ffaf32") %>% setNames(c( "Lateral-ventral_RG" ,     "Dorsal_RG" ,              "Dorsal-lateral_RG" ,      "Primed_active_RG"  ,      "Immature_E_cell"   ,      "Primed_active_RG_dorsal", "NPC" ,                    "Mki67_RG"   ,             "Pre_E" ))
@@ -189,7 +189,11 @@ rasterize(plot, layers='Point', dpi=1000)
 ggsave("UMAP_RG.pdf", width=7, height=4.3)
 ```
 
-# Fig.
+# Fig. S1E
+
+# Fig. S1F
+
+# Fig. S1G
 ```{r}
 genes <- c("Rlbp1", "Crym", "Emx1", "Ascl1")
 ```
@@ -203,7 +207,7 @@ rasterize(plot, layers='Point', dpi=1000)
 ggsave("UMAP_RG_gene_expression.pdf", width=12, height = 9, units = "cm")
 ```
 
-# Fig. 
+# Fig. S1H
 ```{r}
 enrichplot::dotplot(cao$test.results$GSEA$res$'Dorsal_RG'$BP,showCategory=c("regulation of gliogenesis",
 "renal tubule morphogenesis",

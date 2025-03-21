@@ -29,7 +29,7 @@ anno <- qread("anno_rough_1.qs") #annotation file
 con <- qread("con.qs")
 ```
 
-# Fig.  
+# Fig. 4I  
 defining colours of clusters
 ```{r}
 colours <- c("#FF3232","#3232FF", "#32FF32", "#FFFF32", "#FFC8FF", "#FFAF32","#E632E6","#AF0F0F","#320faf","#AF32FF","#ff6432", "#9cff00", "#00ffcc") %>% setNames(c( "A_cells","Astrocytes", "C_cells", "Dividing_cells", "Endothelial_cells","Ependymal_cells","Microglia" ,"Neurons","Oligodendrocytes", "OPCs", "Pericytes_VSMCs" ,"Erythrocytes" ,"ChP_epithelial_cells" ))

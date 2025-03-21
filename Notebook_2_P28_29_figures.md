@@ -58,22 +58,6 @@ rasterize(plot, layers='Point', dpi=1000)
 ggsave("UMAP_gene_expression.pdf", width=16, height = 12, units = "cm")
 ```
 
-# Suppl. Fig. 3H
-
-```{r}
-plotClusterBarplots(con, groups = anno , show.entropy = F, show.size = F  , sample.factor = conditions) + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + scale_fill_discrete(name = "condition")+  scale_x_discrete(limits = level_order)+
-  theme(plot.margin = margin(0.5,0,0,2, "cm")) +xlab(" ")
-ggsave("Barplot_condition.pdf", width=14, height = 8, units = "cm")
-```
-
-# Suppl. Fig. 3I
-```{r}
-plotClusterBarplots(con, groups = anno , show.entropy = F, show.size = F) + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + scale_fill_discrete(name = "condition")+  scale_x_discrete(limits = level_order)+
-  theme(plot.margin = margin(0.5,0,0,2, "cm")) +xlab(" ")
-ggsave("Barplot_samples.pdf", width=15, height = 8, units = "cm")
-```
-
-
 # 2. Generate seurat object
 generate seurat object to use seurats plotting functions
 
@@ -101,7 +85,6 @@ seurat <- SetAssayData(object= seurat, slot= "data", cm_norm )
 ```
 
 to make sure that cells in annotations are in same order as in cm
-read in anno 
 ```{r}
 # order cells in "anno" as in "cm"
 anno %<>% .[match(colnames(cm), names(.))] 
@@ -142,7 +125,7 @@ qsave(seurat, "seurat.qs")
 seurat <- qread("seurat.qs")
 ```
 
-# Suppl. Fig. 3E
+# Fig. S4E
 ```{r}
 genes <- c("Gfap",
 "Aqp4",
@@ -196,16 +179,30 @@ DotPlot(seurat, features = rev(genes), cols = c("Grey", "Blue")) + coord_flip()+
 ggsave("Dotplot.pdf", width=16, height = 16, units = "cm")
 ```
 
-# Suppl. Fig. 3F
+# Fig. S4F
 ```{r}
 VlnPlot(seurat, features= "nFeature_RNA", pt.size = 0, log = F) +  ggtitle(" ") + ylab("genes per cell") + xlab(" ")+ theme_bw(base_size = 16) + theme( legend.position = "none") +  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   theme(plot.margin = margin(0.5,0,0,1, "cm")) 
 ggsave("VlnPlot_genes_clusterwise.pdf")
 ```
 
-# Suppl. Fig. 3G
+# Fig. S4G
 ```{r}
 VlnPlot(seurat, features= "nCount_RNA", pt.size = 0, log = T) +  ggtitle(" ") + ylab("UMIs per cell") + xlab(" ")+ theme_bw(base_size = 16) + theme( legend.position = "none") +  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   theme(plot.margin = margin(0.5,0,0,1, "cm")) 
 ggsave("VlnPlot_UMIs_clusterwise.pdf")
+```
+
+# Fig. S4H
+```{r}
+plotClusterBarplots(con, groups = anno , show.entropy = F, show.size = F  , sample.factor = conditions) + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + scale_fill_discrete(name = "condition")+  scale_x_discrete(limits = level_order)+
+  theme(plot.margin = margin(0.5,0,0,2, "cm")) +xlab(" ")
+ggsave("Barplot_condition.pdf", width=14, height = 8, units = "cm")
+```
+
+# Fig. S4I
+```{r}
+plotClusterBarplots(con, groups = anno , show.entropy = F, show.size = F) + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + scale_fill_discrete(name = "condition")+  scale_x_discrete(limits = level_order)+
+  theme(plot.margin = margin(0.5,0,0,2, "cm")) +xlab(" ")
+ggsave("Barplot_samples.pdf", width=15, height = 8, units = "cm")
 ```

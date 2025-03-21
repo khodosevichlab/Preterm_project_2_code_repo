@@ -44,14 +44,14 @@ sapply(crm$cms, function(d) dim(d)[2])
 sum(sapply(crm$cms, function(d) dim(d)[2]))
 ```
 
-## Suppl. Fig. 3A
+## Fig. S4A
 plot sequenced cells per sample
 ```{r}
 crm$plotSummaryMetrics(comp.group = "sample", second.comp.group = "condition", metrics = "estimated number of cells",plot.geom = "bar") + xlab("") + ylab("number of cells") + theme(legend.position = "right", legend.title = element_blank())
 ggsave("number_of_cells.pdf", width=10, height = 8, units = "cm")
 ```
 
-## Suppl. Fig. 3B
+## Fig. S4B
 plot genes per cell
 ```{r}
 crm$plotDetailedMetrics(comp.group = "condition",
@@ -77,7 +77,7 @@ crm$detectDoublets(env = "doublets", conda.path = "/opt/software/miniconda/4.12.
 #Detected 925 possible doublets out of 29127 cells 
 ```
 
-## Suppl. Fig. 3C
+## Fig. S4C
 ```{r}
 plot <- crm$plotEmbedding(doublet.method = "scrublet", size = 0.2)+ theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
 rasterize(plot, layers='Point', dpi=1000)

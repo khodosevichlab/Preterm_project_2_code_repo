@@ -5,7 +5,7 @@ date: "2023-12-03"
 output: html_document
 ---
 
-This script extracts the Radial glia clusters from the dataset "Early timepoints" (E 18.5 and preterm P0) from the previous paper: Kawase K, Nakamura Y, Wolbeck L, Takemura S, et al. Significance of birth in the maintenance of quiescent neural stem cells. Sci Adv. 2025 Jan 24;11(4):eadn6377. doi: 10.1126/sciadv.adn6377. Epub 2025 Jan 22. PMID: 39841848; PMCID: PMC11753423.
+This script extracts the Radial glia clusters from the dataset "Early timepoints" (E 18.5 and preterm P0) from the previous paper: Kawase K, Nakamura Y, Wolbeck L, Takemura S, et al. Significance of birth in the maintenance of quiescent neural stem cells. Sci Adv. 2025 Jan 24;11(4):eadn6377. doi: 10.1126/sciadv.adn6377. Epub 2025 Jan 22. PMID: 39841848; PMCID: PMC11753423. \
 Clustering and annotation of the Radial glia cells is performed.
 Then, with the R package cacoa, the differentially expressed genes are estimated and Gene set enrichment analysis (GSEA) is performed.
 

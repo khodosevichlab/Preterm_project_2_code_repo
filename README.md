@@ -1,0 +1,1 @@
+This repository contains the analysis steps and code to generate the figures and tables of the paper "Transformation of radial glia into postnatal neural stem cells depends on the birth". Helper functions used in the scripts are in scRNA_helper.R.

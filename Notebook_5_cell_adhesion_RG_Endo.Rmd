@@ -11,7 +11,6 @@ This script uses the fullterm P2 data from the previous paper: Kawase K, Nakamur
 ```{r setup, results='hide', warning=FALSE, message = FALSE}
 library(dplyr)
 library(magrittr)
-library(qs)
 library(openxlsx)
 ```
 

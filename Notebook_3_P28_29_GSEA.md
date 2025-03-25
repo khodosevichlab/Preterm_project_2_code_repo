@@ -54,7 +54,7 @@ DEG_1 <- cao_1$test.results$de %>% lapply("[[", "res")
 write.xlsx(x = DEG_1, file= "DEG_1.xlsx")
 ```
 
-# 4. GSEA
+# 4. GSEA (Table S5)
 ```{r}
 cao_1$estimateOntology(type="GSEA", org.db=org.Mm.eg.db)
 ```

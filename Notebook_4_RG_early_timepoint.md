@@ -165,7 +165,7 @@ require(openxlsx)
 write.xlsx(DEG_early_RG, file = "DEG_early_RG.xlsx")
 ```
 
-# 7. GSEA
+# 7. GSEA (Table S1)
 ```{r}
 cao$estimateOntology(type="GSEA", org.db=org.Mm.eg.db)
 ```

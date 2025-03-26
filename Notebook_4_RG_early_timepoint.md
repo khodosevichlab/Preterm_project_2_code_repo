@@ -137,7 +137,7 @@ cao <- Cacoa$new(con_RG, cell.groups = anno_RG, sample.groups=condition, n.cores
 
 # 6. DEG analysis
 ```{r,eval=FALSE}
-cao$estimateDEPerCellType(n.cores=50, min.cell.count = 10, min.cell.frac = 0.05)
+cao$estimateDEPerCellType(n.cores=50)
 #DEs not calculated for 2 cell group(s): Immature ependymal cells-2, RG_5
 ```
 
